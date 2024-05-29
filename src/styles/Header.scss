@@ -1,0 +1,58 @@
+@import "../styles/variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: white;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+
+    a,
+    button {
+      margin-left: 20px;
+      font-size: 16px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+
+    .nav-links {
+      margin-top: 10px;
+      flex-direction: column;
+
+      a,
+      button {
+        margin: 5px 0;
+      }
+    }
+  }
+}

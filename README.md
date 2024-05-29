@@ -1,30 +1,84 @@
-# React + TypeScript + Vite
+Конечно! Вот пример файла `README.md` для вашего проекта прогноза погоды на React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**`README.md`**
 
-Currently, two official plugins are available:
+````markdown
+# WeatherApp
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+WeatherApp - это веб-приложение для прогноза погоды, созданное с использованием React, TypeScript, и OpenWeatherMap API. Приложение позволяет пользователям получать текущую погоду по их геолокации, искать погоду в других городах и предоставляет авторизацию для доступа к расширенным функциям.
 
-## Expanding the ESLint configuration
+## Функциональность
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Авторизация**: Пользователи могут войти в систему для доступа к расширенным функциям, таким как поиск погоды в других городах.
+- **Геолокация**: Автоматическое определение текущего местоположения пользователя и отображение погоды.
+- **Поиск по городам**: Авторизованные пользователи могут искать погоду в других городах.
+- **Адаптивный дизайн**: Приложение оптимизировано для работы на различных устройствах, включая настольные компьютеры, ноутбуки, планшеты и мобильные телефоны.
 
-- Configure the top-level `parserOptions` property like this:
+## Установка
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/AlxSelikhov/WeatherApp.git
+   ```
+````
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Установите зависимости:
+
+   ```bash
+   npm install
+   ```
+
+3. В этом временно проекте не создавался `.env` в корне проекта, чтобы сразу получить данные без регистрации на сайте OpenWeatherMap
+
+4. Запустите проект:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Откройте браузер и перейдите по адресу `http://localhost:5173`.
+
+## Используемые технологии
+
+- **React**: JavaScript библиотека для создания пользовательских интерфейсов.
+- **TypeScript**: Строго типизированное надмножество JavaScript.
+- **Vite**: Быстрый сборщик проектов.
+- **SASS**: Препроцессор CSS для более удобной стилизации.
+- **Axios**: Библиотека для выполнения HTTP запросов.
+- **React Router**: Библиотека для маршрутизации в React приложениях.
+
+## Компоненты
+
+### Header
+
+Компонент `Header` отвечает за отображение навигационной панели, включая ссылки на главную страницу, поиск по городам и авторизацию.
+
+### HomePage
+
+Компонент `HomePage` отображает текущую погоду для местоположения пользователя, используя его геолокацию.
+
+### LoginPage
+
+Компонент `LoginPage` предоставляет форму для авторизации пользователей, включая валидацию и отображение ошибок.
+
+### SearchPage
+
+Компонент `SearchPage` позволяет авторизованным пользователям искать погоду в других городах и отображает результаты поиска.
+
+### WeatherCard
+
+Компонент `WeatherCard` используется для отображения погодной информации в виде карточек.
+
+## Сервисы
+
+### authService
+
+Сервис `authService` предоставляет функции для управления авторизацией пользователей, включая вход, выход и проверку статуса авторизации.
+
+### weatherService
+
+Сервис `weatherService` выполняет HTTP запросы к OpenWeatherMap API для получения информации о погоде.
+
+## Стили
+
+Все стили организованы в папке `/styles` и используют SASS для более удобного управления стилями и переменными.

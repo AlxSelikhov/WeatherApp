@@ -1,0 +1,166 @@
+@import "../styles/variables";
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 108px); // Учитывая высоту хедера
+  padding-top: 60px; // Учитывая высоту хедера
+  background-color: #f0f2f5;
+
+  .login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .google-login {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #4285f4;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 20px;
+
+      &:hover {
+        background-color: #357ae8;
+      }
+    }
+
+    .separator {
+      margin: 20px 0;
+      font-size: 14px;
+      color: #999;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: #ccc;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+
+    form {
+      .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+          color: #333;
+        }
+
+        input {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          transition: border-color 0.3s;
+
+          &.input-error {
+            border-color: red;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: $primary-color;
+
+            &.input-error {
+              border-color: red;
+            }
+          }
+        }
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+
+        &.general-error {
+          margin-bottom: 10px;
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        a {
+          color: #007bff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        background-color: $primary-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+
+    .register-link {
+      margin-top: 20px;
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    .login-container {
+      padding: 20px;
+      width: 90%;
+    }
+  }
+}
